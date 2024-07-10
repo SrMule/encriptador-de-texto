@@ -1,33 +1,44 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desafío de Encriptación</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <div class="container">
-        <h1>¡Bienvenidas y bienvenidos a nuestro primer desafío!</h1>
-        <p>Durante estas cuatro semanas, vamos a trabajar en una aplicación que encripta textos, así podrás intercambiar mensajes secretos con otras personas que sepan el secreto de la encriptación utilizada.</p>
-        <p>Las "llaves" de encriptación que utilizaremos son las siguientes:</p>
-        <ul>
-            <li>La letra "e" es convertida para "enter"</li>
-            <li>La letra "i" es convertida para "imes"</li>
-            <li>La letra "a" es convertida para "ai"</li>
-            <li>La letra "o" es convertida para "ober"</li>
-            <li>La letra "u" es convertida para "ufat"</li>
-        </ul>
-        <div class="input-section">
-            <textarea id="input-text" placeholder="Ingrese el texto aquí..."></textarea>
-            <div class="buttons">
-                <button onclick="encryptText()">Encriptar</button>
-                <button onclick="decryptText()">Desencriptar</button>
+    <header>
+        <img src="logo.png" alt="imagen de logo de alura">
+    </header>
+    <main>
+        <div class="container">
+            <div class="input-section">
+                <textarea id="input-text" placeholder="Ingrese el texto aquí..." maxlength="1000"></textarea>
+                <div class="helper-text">Solo letras minúsculas y sin acentos.</div>
+                <div class="buttons">
+                    <button onclick="encryptText()">Encriptar</button>
+                    <button onclick="decryptText()">Desencriptar</button>
+                </div>
             </div>
-            <textarea id="output-text" placeholder="El resultado aparecerá aquí..." readonly></textarea>
-            <button onclick="copyText()">Copiar al portapapeles</button>
+            <div id="output-container" class="output-container">
+                <div id="output-message-container">
+                    <img id="output-image" src="person.png" alt="Imagen de persona">
+                    <h2 id="output-heading">Ningún mensaje fue encontrado</h2>
+                    <p id="output-message">Ingresa el texto que desees encriptar o desencriptar.</p>
+                </div>
+                <div id="output-result-container" class="output-result-container hidden">
+                    <textarea id="output-text" placeholder="El resultado aparecerá aquí..." readonly></textarea>
+                    <button onclick="copyText()">Copiar al portapapeles</button>
+                </div>
+            </div>
         </div>
-    </div>
+    </main>
+    <footer>
+        <p>Desarrollado por Eduardo García</p>
+    </footer>
     <script src="script.js"></script>
 </body>
+
 </html>
